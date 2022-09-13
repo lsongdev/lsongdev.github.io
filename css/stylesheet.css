@@ -1,0 +1,124 @@
+@import url(https://lsong.org/stylesheets/theme/default.css);
+@import url(https://lsong.org/stylesheets/base.css);
+@import url(https://lsong.org/stylesheets/util.css);
+@import url(https://lsong.org/stylesheets/grid.css);
+@import url(https://lsong.org/stylesheets/flex.css);
+@import url(https://lsong.org/stylesheets/input.css);
+
+::selection {
+  color: #ffffff;
+  background-color: #ff0080;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  width: 750px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  box-shadow: 0 0 10px 3px var(--border-color, #ddd);
+}
+
+.header {
+  line-height: 48px;
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color, #ddd);
+}
+
+.header hr {
+  display: none;
+}
+
+.header .heading {
+  margin: 0 10px 0 0;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.header .logo {
+  width: 1.5em;
+  height: 1.5em;
+  font-size: inherit;
+  margin-right: 3px;
+}
+
+.header h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.3em;
+  font-weight: bold;
+  font-family: monospace;
+  color: rgba(0, 0, 0, 0.2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(90deg, #7928ca, #ff0080, green, #38bdf8);
+  background-image: linear-gradient(90deg, #2ca2b4, #5598de 24%, #7f87ff 45%, #f65aad 76%, #ec3d43);
+  background-image: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+}
+
+.header h1[prefix]:before {
+  content: attr(prefix);
+  font-weight: normal;
+}
+
+/* navbar */
+.nav-bar a {
+  color: #666;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.nav-bar a:hover {
+  color: green;
+}
+
+@media screen and (max-width: 480px) {
+  /*   
+  .header {
+    padding: 1em !important;
+    line-height: 1em;
+  }
+  .header, .header > .heading {
+    flex-direction: column;
+  } 
+  */
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 3em 1em;
+  }
+
+  .header,
+  .footer {
+    text-align: center;
+  }
+
+  .header h1[prefix]:before {
+    content: '';
+  }
+
+  .header {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    position: fixed;
+    padding: 0 1em;
+    /* position: sticky; */
+    /* border-radius: 10px; */
+    background-color: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(12px) saturate(1.25);
+    box-shadow: 0 0 10px 3px var(--border-color, #ddd);
+    -webkit-backdrop-filter: blur(12px) saturate(1.25);
+  }
+}

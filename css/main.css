@@ -1,0 +1,62 @@
+@import url(./stylesheet.css);
+
+/* basic */
+
+.talk-topic time,
+.talk-location a {
+  text-decoration: none;
+}
+
+.talk-location:before {
+  content: 'at';
+  margin-right: 2px;
+}
+
+.projects ul {
+  padding: 0;
+  gap: 10px;
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.projects li a {
+  color: #111 !important;
+  line-height: 1.625;
+  font-size: 1.1em;
+  display: block;
+  font-weight: 500;
+  text-decoration: none;
+  word-break: break-all;
+
+
+  color: #666;
+  padding: 1em;
+  list-style: none;
+  border-radius: 8px;
+  background-color: rgba(249, 249, 249, 1);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+
+  transition-property: background-color fill, stroke;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-duration: .15s;
+}
+
+.projects li a::after {
+  color: #999;
+  display: block;
+  content: attr(title);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.projects li a:hover {
+  background-color: rgba(243, 244, 246, 1);
+}
+
+@media screen and (max-width: 768px) {
+  .projects ul {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}

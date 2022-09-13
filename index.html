@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Liu Song’s Home</title>
+  <meta name="description" content="homepage, blog, music and etc.">
+  <meta name="author" content="Lsong">
+  <meta name="viewport" content="width=device-width">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Lsong’s Web">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@song940">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" href="/icon.png">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" sizes="128x128" type="image/png" href="/icon-x128.png">
+  <link rel="apple-touch-icon" sizes="512x512" type="image/png" href="/icon-x512.png">
+  <link type="text/css" charset="utf-8" rel="stylesheet" href="/css/main.css">
+  <script type="module" src="/js/index.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="header scrollbar-hide">
+      <a class="heading" href="/">
+        <img src="icon.svg" alt="" class="logo" width="24">
+        <h1 prefix="Lsong’s " class="title">Home</h1>
+      </a>
+      <nav id="navbar" class="nav nav-bar">
+        <a href="//lsong.org">home</a>
+        <a href="//lsong.org/posts">blog</a>
+        <a href="//lsong.org/books">books</a>
+        <a href="//lsong.org/music">music</a>
+        <a href="//lsong.org/apps">apps</a>
+        <x-inbox></x-inbox>
+      </nav>
+      <hr />
+    </header>
+
+    <main class="content">
+      <section id="hello">
+        <h2>Hello 👋</h2>
+        <p class="headline">
+          Hi, I'm Liu Song, a full-stack developer with a passion for open-source software.
+          I have experience in web and mobile development, as well as a background in embedded systems and network
+          protocols.
+          I enjoy writing tech <a href="//lsong.org/posts">blogs</a> and developing <a
+            href="//lsong.org/apps.html">applications</a> in my spare time.
+          Proficient in Node.js, Golang, and server operations, I'm always eager to learn more and contribute to the
+          community.
+          Check out my GitHub <a href="https://github.com/song940">@song940</a> for some of my projects and feel free
+          to connect
+          with me to discuss ideas.
+          When I'm not coding, I enjoy listening to <a href="//lsong.org/music">music</a> and playing <a
+            href="//lsong.org/games">games</a>.
+        </p>
+      </section>
+
+      <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li class="project">
+            <a href="https://github.com/song940/node-escpos" title="ESC/POS Printer driver for node">escpos</a>
+          </li>
+
+          <li class="project">
+            <a href="https://github.com/song940/kelp" title="dead simple nodejs http(s) web framework">kelp</a>
+          </li>
+
+          <li class="project">
+            <a href="https://github.com/song940/node-ntp" title="simple network time protocol implementation for node.js">ntp2</a>
+          </li>
+
+          <li class="project">
+            <a href="https://github.com/song940/homekit" title="A HomeKit Accessory implementation in Node.js">homekit</a>
+          </li>
+
+          <li class="project">
+            <a href="https://github.com/song940/node-yeelight" title="A Node.js lib for the yeelight smart bulb">yeelight</a>
+          </li>
+
+          <li class="project">
+            <a href="https://github.com/song940/input-event" title="read and parse input device(like mouse, keyboard, joystick and IR-Remote)'s event data">input-event</a>
+          </li>
+
+        </ul>
+        <p>More Projects See <a href="https://github.com/song940?tab=repositories">GitHub</a>.</p>
+      </section>
+
+      <section class="posts" id="posts">
+        <h2>Posts</h2>
+        <ul>
+          <li>2016-02 <a href="/posts/2016/02/linux-low-level-input-event-reading.html">Linux Low-level Input Event
+              Reading</a></li>
+          <li>2018-09 <a href="/posts/2018/09/phicomm-k2-router-repair.html">Flash Chip of a Phicomm K2 Router With a
+              Programmer</a></li>
+          <li>2020-12 <a href="/posts/2020/12/you-should-use-right-side-usbc-port.html">You Should Use Right Side
+              USB-C
+              Port</a></li>
+        </ul>
+        <p>More Posts See <a href="/posts">Blog</a>.</p>
+      </section>
+
+      <section class="talks">
+        <h2>Talks</h2>
+        <ul>
+          <li class="talk-topic">
+            <time class="talk-date">2017-12-14</time>
+            <a href="http://fe.jr.jd.com/techDay/3.pdf">Turbo - the next full-featured javascript web frameworks</a>
+            <address class="talk-location"><a href="https://maps.lsong.org/?q=39.8699037,116.4557876,12z">
+                JD.com Beijing
+              </a></address>
+          </li>
+          <li class="talk-topic">
+            <time class="talk-date">2017-03-10</time>
+            <a href="//lsong.org/slides/smallest-javascript-web-framework-in-the-world">Smallest javascript web
+              framework
+              in
+              the world</a>
+            <address class="talk-location"><a href="https://maps.lsong.org/?q=39.9966019,116.4788034,17z">
+                Meituan Beijing
+              </a></address>
+          </li>
+
+          <li class="talk-topic">
+            <time class="talk-date">2017-01-17</time>
+            <a href="//lsong.org/slides/i-bought-a-light-bulb.pdf">I bought a light bulb</a>
+            <address class="talk-location">
+              <a href="https://maps.lsong.org/?q=39.9966019,116.4788034,17z">
+                Meituan Beijing
+              </a>
+            </address>
+          </li>
+          <li class="talk-topic">
+            <time class="talk-date">2015-12-17</time>
+            <a href="http://mit.sankuai.com/activity/#/936">Isomorphic JavaScript and The Future of Web
+              Applications</a>
+            <address class="talk-location"><a href="https://maps.lsong.org/?q=39.9966019,116.4788034,17z">
+                WangJing SOHO in Beijing
+              </a>
+            </address>
+          </li>
+          <li class="talk-topic">
+            <time class="talk-date">2015-10-22</time>
+            <a href="//lsong.org/slides/canary-project-introduction">Instructions to canary project</a>
+            <address class="talk-location"><a href="https://maps.lsong.org/?q=39.9966019,116.4788034,17z">
+                WangJing SOHO in Beijing
+              </a></address>
+          </li>
+          <li class="talk-topic"><time class="talk-date">2015-05-10</time>
+            <a href="//lsong.org/slides/meituan-bootcamp-clean-code">Clean Code | Best practices for writing readable
+              code</a>
+            <address class="talk-location"><a href="https://maps.lsong.org/?q=39.9966019,116.4788034,17z">
+                Meituan Beijing
+              </a></address>
+          </li>
+
+        </ul>
+      </section>
+      <hr />
+      <section class="subscribe" id="subscribe">
+        <h2>Subscribe</h2>
+        <p>Join our occasional newsletter for product launches, availability, job openings, and news:</p>
+        <form action="https://formspree.io/song940@gmail.com" method="post" class="flex" >
+          <input class="input-block" type="email" id="email" name="email" required placeholder="email address">
+          <button class="button" type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <hr />
+      Liu Song
+      <address>
+        <a href="mailto:hi@lsong.org">hi@lsong.org</a>
+      </address>
+      <a href="https://lsong.org">https://lsong.org</a>
+    </footer>
+  </div>
+</body>
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-42621148-4', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</html>

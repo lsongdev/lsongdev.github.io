@@ -1,0 +1,30 @@
+{
+  "name": "Liu Song’s Home",
+  "short_name": "Lsong’s Home",
+  "description": "homepage, blog, music and etc.",
+  "id": "?type=home",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000",
+  "background_color": "#efefef",
+  "icons": [
+    {
+      "src": "icon-x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": [
+    "web",
+    "music",
+    "books",
+    "education"
+  ]
+}
