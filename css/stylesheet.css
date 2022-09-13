@@ -1,0 +1,64 @@
+@import "https://lsong.org/stylesheets/index.css";
+@import 'https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap';
+
+::selection {
+  color: #ffffff;
+  background-color: var(--color-pink);
+}
+
+:focus-visible {
+  outline: var(--focus-ring-width) solid color-mix(in srgb, var(--color-focus) 45%, transparent);
+  outline-offset: 2px;
+}
+
+
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+body {
+  --font-family: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+h1,h2,h3,h4 {
+  --font-family: "Oxanium", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+body > header,
+body > main,
+body > footer {
+  max-width: min(calc(100% - 2rem), 720px);
+  margin: 0 auto;
+}
+
+
+
+.navbar hr {
+  display: none;
+}
+
+.heading img {
+  width: 1em;
+}
+
+footer {
+  color: var(--muted);
+  text-align: center;
+  padding: 34px 0 50px;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar h1::before {
+    content: attr(prefix);
+    font-weight: lighter;
+  }
+}

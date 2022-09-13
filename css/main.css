@@ -1,0 +1,73 @@
+@import url(./stylesheet.css);
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  border: 1px solid #eee;
+  padding: 10px;
+  margin-top: 1.5em;
+  transition: border ease 500ms;
+}
+
+li:hover {
+  border-color: #ddd;
+}
+
+li > a {
+  color: #333;
+  font-size: 1.2em;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+li > a::after {
+  margin-top: 10px;
+  color: #6b7280;
+  font-size: smaller;
+  font-weight: lighter;
+  display: block;
+  content: attr(title);
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+  text-transform: none;
+  overflow: hidden;
+  /* https://stackoverflow.com/questions/15909489/text-overflow-ellipsis-on-two-lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+li > a {
+  background: linear-gradient(to right, #bbf7d0, #dcfce7 );
+  background-size: 0% 50%;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  transition: background-size 2s ease-in-out;
+}
+
+li > a:hover {
+  background-size: 100% 50%;
+  background-position: left bottom;
+}
+
+time {
+  color: #6b7280;
+  display: block;
+}
+
+.projects a {
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  /*  see https://blog.lsong.org/css/stylesheet.css */
+  /*
+  .post-date,
+  .talk-date {
+    display: none;
+  }
+  */
+}
