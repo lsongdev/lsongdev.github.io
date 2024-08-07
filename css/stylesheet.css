@@ -95,7 +95,11 @@
 @media screen and (max-width: 768px) {
   .container {
     width: 100%;
-    padding: 3em 1em;
+    padding: 1px 1em;
+  }
+
+  .content {
+    margin-top: 3em;
   }
 
   .header,
@@ -121,4 +125,6 @@
     box-shadow: 0 0 10px 3px var(--border-color, #ddd);
     -webkit-backdrop-filter: blur(12px) saturate(1.25);
   }
+
+
 }
