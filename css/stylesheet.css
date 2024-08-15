@@ -10,10 +10,6 @@
   background-color: #ff0080;
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
 .container {
   width: 750px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -99,7 +95,7 @@
   }
 
   .content {
-    margin-top: 3em;
+    margin-top: 4em;
   }
 
   .header,
@@ -120,7 +116,6 @@
     padding: 0 1em;
     /* position: sticky; */
     /* border-radius: 10px; */
-    background-color: rgba(255, 255, 255, .5);
     backdrop-filter: blur(12px) saturate(1.25);
     box-shadow: 0 0 10px 3px var(--border-color, #ddd);
     -webkit-backdrop-filter: blur(12px) saturate(1.25);
