@@ -11,7 +11,7 @@
 }
 
 .container {
-  width: 750px;
+  --container-width: 750px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   box-shadow: 0 0 10px 3px var(--border-color, #ddd);
 }
