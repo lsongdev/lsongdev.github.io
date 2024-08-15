@@ -89,6 +89,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 1px 1em;
+  }
   .content {
     margin-top: 4em;
   }
