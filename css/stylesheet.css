@@ -75,6 +75,10 @@
   color: green;
 }
 
+main.content {
+  overflow: hidden;
+}
+
 @media screen and (max-width: 480px) {
   /*   
   .header {
@@ -118,6 +122,4 @@
     box-shadow: 0 0 10px 3px var(--border-color, #ddd);
     -webkit-backdrop-filter: blur(12px) saturate(1.25);
   }
-
-
 }
