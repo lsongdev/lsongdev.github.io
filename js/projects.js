@@ -19,7 +19,8 @@ export const render = async element => {
     const nm = document.createElement('a');
     nm.href = project.html_url;
     nm.textContent = project.name;
-    nm.title = project.description;
+    nm.title = project.description ?? "";
+    li.className = 'card col-3 col-lg-4 col-sm-6';
     li.append(nm);
     element.append(li);
   }

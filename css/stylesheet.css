@@ -2,6 +2,7 @@
 @import url(https://lsong.org/stylesheets/base.css);
 @import url(https://lsong.org/stylesheets/util.css);
 @import url(https://lsong.org/stylesheets/grid.css);
+@import url(https://lsong.org/stylesheets/card.css);
 @import url(https://lsong.org/stylesheets/flex.css);
 @import url(https://lsong.org/stylesheets/input.css);
 
@@ -11,8 +12,8 @@
 }
 
 .container {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   box-shadow: 0 0 10px 3px var(--border-color, #ddd);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .header {
@@ -96,9 +97,6 @@ main.content {
     width: 100%;
     padding: 1px 1em;
   }
-  .content {
-    margin-top: 4em;
-  }
 
   .header,
   .footer {
@@ -114,9 +112,10 @@ main.content {
     left: 0;
     right: 0;
     z-index: 99;
-    position: fixed;
     padding: 0 1em;
-    /* position: sticky; */
+    position: sticky;
+    margin: 0 -1em;
+    /* position: fixed; */
     /* border-radius: 10px; */
     backdrop-filter: blur(12px) saturate(1.25);
     box-shadow: 0 0 10px 3px var(--border-color, #ddd);
