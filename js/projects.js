@@ -1,7 +1,7 @@
 import { repos } from 'https://lsong.org/scripts/services/github.js';
 
 export const getProjects = async () => {
-  const projects = await repos('song940');
+  const projects = await repos('lsongdev');
   return projects;
 };
 
@@ -13,7 +13,7 @@ export const render = async element => {
     element = document.querySelector(element);
   if (!element) return;
   const projects = await getProjects();
-  if(!projects) return;
+  if (!projects) return;
   for (const project of projects.sort(sortByStar)) {
     const li = document.createElement('li');
     const nm = document.createElement('a');

@@ -76,10 +76,6 @@
   color: green;
 }
 
-main.content {
-  overflow: hidden;
-}
-
 @media screen and (max-width: 480px) {
   /*   
   .header {
