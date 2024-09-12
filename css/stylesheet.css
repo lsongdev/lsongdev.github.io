@@ -5,6 +5,7 @@
 @import url(https://lsong.org/stylesheets/card.css);
 @import url(https://lsong.org/stylesheets/flex.css);
 @import url(https://lsong.org/stylesheets/input.css);
+@import url(https://lsong.org/stylesheets/button.css);
 
 ::selection {
   color: #ffffff;
