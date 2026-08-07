@@ -2,6 +2,16 @@
 @import 'https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap';
 @import 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap';
 
+:root {
+  --line: var(--color-border);
+  --card: var(--color-surface);
+  --danger: var(--color-danger);
+  --page-max-width: 720px;
+  --page-gutter: 1rem;
+  --font-family: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-family-heading: "Oxanium", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
 ::selection {
   color: #ffffff;
   background-color: var(--color-pink);
@@ -12,35 +22,37 @@
   outline-offset: 2px;
 }
 
-
 @view-transition {
   navigation: auto;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
-
 body {
-  --font-family: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-family);
 }
 
 h1,h2,h3,h4 {
-  --font-family: "Oxanium", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-family-heading);
 }
 
 body > header,
 body > main,
 body > footer {
-  max-width: min(calc(100% - 2rem), 720px);
-  margin: 0 auto;
+  width: min(
+    calc(100% - var(--page-gutter) * 2),
+    var(--page-max-width)
+  );
+  max-width: none;
+  margin-inline: auto;
 }
 
-
+body > footer {
+  gap: 16px;
+  text-align: center;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  padding: 34px 0 50px;
+}
 
 .navbar hr {
   display: none;
@@ -50,10 +62,11 @@ body > footer {
   width: 1em;
 }
 
-footer {
-  color: var(--muted);
-  text-align: center;
-  padding: 34px 0 50px;
+.page-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 768px) {
@@ -62,3 +75,14 @@ footer {
     font-weight: lighter;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
