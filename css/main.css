@@ -14,6 +14,27 @@
   --font-family-heading: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
+@media (prefers-color-scheme: dark) {
+  .home-page {
+    --color-canvas: #09090b;
+    --color-surface: #18181b;
+    --color-text: #fafafa;
+    --color-text-muted: #a1a1aa;
+    --color-border: #3f3f46;
+    --color-primary: #8b6cff;
+    --color-primary-hover: #a78bfa;
+    --color-success: #4ade80;
+  }
+
+  .home-page .hero-summary p {
+    color: #d4d4d8;
+  }
+
+  .home-page .elsewhere-grid a:hover {
+    background: #27272a;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
