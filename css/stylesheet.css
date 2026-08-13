@@ -26,7 +26,15 @@
   navigation: auto;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
+  min-width: 320px;
+  margin: 0;
   font-family: var(--font-family);
 }
 
