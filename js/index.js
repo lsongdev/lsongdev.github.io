@@ -1,6 +1,20 @@
+import { ready } from 'https://lsong.org/scripts/dom/index.js';
+import { registerServiceWorker } from 'https://lsong.org/scripts/sw.js';
 import { render as renderPosts } from './posts.js';
 import { render as renderProjects } from './projects.js';
 import { render as renderProducts } from './products.js?v=2';
+
+ready(() => {
+  const markReady = selector => {
+    const element = document.querySelector(selector);
+    if (element) element.setAttribute('aria-busy', 'false');
+  };
+  renderPosts('#posts ul');
+  renderProjects('#projects ul');
+  renderProducts('#products ul').finally(() => markReady('#products ul'));
+});
+
+registerServiceWorker("sw.js");
 
 const ready = callback => {
   if (document.readyState === 'loading') {
@@ -9,20 +23,3 @@ const ready = callback => {
     callback();
   }
 };
-
-ready(() => {
-  const markReady = selector => {
-    const element = document.querySelector(selector);
-    if (element) element.setAttribute('aria-busy', 'false');
-  };
-
-  renderProducts('.product-grid').finally(() => markReady('.product-grid'));
-  renderPosts('#writing ul').finally(() => markReady('#writing ul'));
-  renderProjects('#open-source ul').finally(() => markReady('#open-source ul'));
-  const year = document.querySelector('#copyright-year');
-  if (year) year.textContent = new Date().getFullYear();
-});
-
-if ('serviceWorker' in navigator && location.protocol === 'https:') {
-  navigator.serviceWorker.register('/sw.js').catch(() => {});
-}

@@ -3,157 +3,206 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Lsong — Independent builder</title>
-  <meta name="description" content="Liu Song is an independent developer building useful software for the web and beyond.">
+  <title>Lsong’s Home</title>
+  <meta name="description" content="homepage, blog, music and etc.">
   <meta name="author" content="Lsong">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+  <meta name="viewport" content="width=device-width">
+  <meta name="theme-color" content="#e8fbfe">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Lsong">
+  <meta name="apple-mobile-web-app-title" content="Lsong’s Home">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@lsongdev">
   <link rel="manifest" href="/manifest.json">
-  <link rel="icon" type="image/png" href="/assets/web/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="/assets/web/apple-touch-icon.png">
-  <link type="text/css" charset="utf-8" rel="stylesheet" href="/css/main.css?v=6">
-  <script type="module" src="/js/index.js?v=2"></script>
+  <link rel="icon" type="image/png" href="/icon.png">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" sizes="128x128" type="image/png" href="/icon-x128.png">
+  <link rel="apple-touch-icon" sizes="512x512" type="image/png" href="/icon-x512.png">
+  <link type="text/css" charset="utf-8" rel="stylesheet" href="/css/main.css">
+  <script type="module" src="/js/index.js"></script>
 </head>
 
-<body class="home-page">
-  <a class="skip-link" href="#content">Skip to content</a>
+<body>
 
-  <header class="site-header navbar">
+  <header class="navbar site-header">
     <a class="navbar-brand" href="/" aria-label="Lsong home">
-      <span class="brand-mark" aria-hidden="true"><img src="/assets/web/icon-512.png" alt=""></span>
+      <img class="navbar-brand-mark" src="/assets/web/icon-512.png" alt="" aria-hidden="true">
       <span prefix="Lsong’s " class="title">Home</span>
     </a>
-    <nav class="site-nav" aria-label="Main navigation">
-      <a class="active" href="#products">Products</a>
-      <a href="#writing">Writing</a>
-      <a href="#open-source">Open source</a>
-      <a href="https://my.lsong.org">Account</a>
+    <nav>
+      <a href="//lsong.org">home</a>
+      <a href="//lsong.org/posts">blog</a>
+      <a href="//lsong.org/books">books</a>
+      <a href="//lsong.org/music">music</a>
+      <a href="//lsong.org/start">apps</a>
+      <x-inbox></x-inbox>
     </nav>
+    <hr />
   </header>
 
-  <main id="content">
-    <section class="site-hero" aria-labelledby="hero-title">
-      <p class="eyebrow">Independent builder · Beijing</p>
-      <h1 class="site-hero-title" id="hero-title">I build small,<br><span>useful things.</span></h1>
-      <p class="site-hero-copy">
+  <main class="content layout-content">
+    <section id="hello" class="site-hero" aria-labelledby="hero-title">
+      <h2 class="site-hero-title">I build small,<br><span>useful things.</span></h2>
+      <p class="headline site-hero-copy">
         Hi, I’m Liu Song — a full-stack developer making thoughtful software for the web,
         mobile devices, and the systems in between.
       </p>
-      <div class="site-hero-actions">
-        <a class="button button-primary" href="#products">Explore products</a>
-        <a class="button button-secondary" href="https://github.com/lsongdev">GitHub ↗</a>
-      </div>
     </section>
 
-    <section class="home-section products-section" id="products" aria-labelledby="products-title">
-      <header class="section-header">
-        <div>
-          <p class="section-index">01 / Products</p>
-          <h2 id="products-title">Made for everyday use.</h2>
-        </div>
-        <a class="text-link section-link" href="https://lsong.org/start">View all apps <span aria-hidden="true">↗</span></a>
-      </header>
+    <section id="products" data-products-source="https://go.lsong.org/data.yaml" data-products-folder="Lsong’s Products"
+      aria-label="Featured products" aria-busy="true">
+      <h2>Products</h2>
+      <ul id="products" class="products" aria-live="polite">
+        <li>
+          <a href="https://my.lsong.org">
+            <span class="product-name">MyCenter</span>
+            <em class="product-description">One secure account for every Lsong application.</em>
+          </a>
+        </li>
+        <li>
+          <a href="https://ai.lsong.org">
+            <span class="product-name">Models</span>
+            <em class="product-description">One API for the models and SDKs you already know.</em>
+          </a>
+        </li>
+        <li>
+          <a href="https://mail.lsong.org">
+            <span class="product-name">Mail</span>
+            <em class="product-description">Your name, your own private inbox.</em>
+          </a>
+        </li>
+        <li>
+          <a href="https://shop.lsong.org">
+            <span class="product-name">Mori</span>
+            <em class="product-description">A light, sincere marketplace for small and beautiful things.</em>
+          </a>
+        </li>
+      </ul>
 
-      <div class="product-grid grid grid-cols-2 sm-grid-cols-1" data-products-source="https://go.lsong.org/data.yaml" data-products-folder="Lsong’s Products" aria-label="Featured products" aria-busy="true">
-        <a class="card product-card" href="https://my.lsong.org">
-          <span class="product-topline"><span>Identity</span><span>01</span></span>
-          <span class="product-name">MyCenter</span>
-          <span class="product-description">One secure account for every Lsong application.</span>
-          <span class="product-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="card product-card" href="https://ai.lsong.org">
-          <span class="product-topline"><span>AI infrastructure</span><span>02</span></span>
-          <span class="product-name">Models</span>
-          <span class="product-description">One API for the models and SDKs you already know.</span>
-          <span class="product-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="card product-card" href="https://mail.lsong.org">
-          <span class="product-topline"><span>Communication</span><span>03</span></span>
-          <span class="product-name">Mail</span>
-          <span class="product-description">Your name, your own private inbox.</span>
-          <span class="product-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="card product-card product-card-warm" href="https://shop.lsong.org">
-          <span class="product-topline"><span>Independent market</span><span>04</span></span>
-          <span class="product-name">Mori</span>
-          <span class="product-description">A light, sincere marketplace for small and beautiful things.</span>
-          <span class="product-arrow" aria-hidden="true">↗</span>
-        </a>
-      </div>
+      <p>More Products See <a href="https://go.lsong.org/apps">Apps</a>.</p>
+
     </section>
 
-    <section class="home-section split-section" id="writing" aria-labelledby="writing-title">
-      <header class="section-header section-header-compact">
-        <div>
-          <p class="section-index">02 / Writing</p>
-          <h2 id="writing-title">Notes from along the way.</h2>
-        </div>
-        <a class="text-link section-link" href="https://blog.lsong.org">All writing <span aria-hidden="true">↗</span></a>
-      </header>
-      <ul class="list entry-list" data-limit="5" aria-busy="true">
-        <li class="list-item"><time datetime="2026-01-21">2026-01-21</time><a href="/posts">Jia Guolong's Fork in the Road</a></li>
-        <li class="list-item"><time datetime="2025-05-27">2025-05-27</time><a href="/posts">I lose my hearing in my left ear</a></li>
-        <li class="list-item"><time datetime="2024-11-20">2024-11-20</time><a href="/posts">Be My Eyes</a></li>
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/lsongdev/node-escpos" title="ESC/POS Printer driver for node">escpos</a>
+        </li>
+
+        <li>
+          <a href="https://github.com/lsongdev/kelp" title="dead simple nodejs http(s) web framework">kelp</a>
+        </li>
+
+        <li>
+          <a href="https://github.com/lsongdev/node-ntp"
+            title="simple network time protocol implementation for node.js">ntp2</a>
+        </li>
+
+        <li>
+          <a href="https://github.com/lsongdev/homekit"
+            title="A HomeKit Accessory implementation in Node.js">homekit</a>
+        </li>
+
+        <li>
+          <a href="https://github.com/lsongdev/node-yeelight"
+            title="A Node.js lib for the yeelight smart bulb">yeelight</a>
+        </li>
+
+        <li>
+          <a href="https://github.com/lsongdev/input-event"
+            title="read and parse input device(like mouse, keyboard, joystick and IR-Remote)'s event data">input-event</a>
+        </li>
+
+      </ul>
+      <p>More Projects See <a href="https://github.com/lsongdev?tab=repositories">GitHub</a>.</p>
+    </section>
+
+    <section id="posts" class="posts" >
+      <h2>Posts</h2>
+      <ul>
+        <li>2016-02 <a href="/posts/2016/02/linux-low-level-input-event-reading.html">Linux Low-level Input Event
+            Reading</a></li>
+        <li>2018-09 <a href="/posts/2018/09/phicomm-k2-router-repair.html">Flash Chip of a Phicomm K2 Router With a
+            Programmer</a></li>
+        <li>2020-12 <a href="/posts/2020/12/you-should-use-right-side-usbc-port.html">You Should Use Right Side
+            USB-C
+            Port</a></li>
+      </ul>
+      <p>More Posts See <a href="/posts">Blog</a>.</p>
+    </section>
+
+    <section id="talks" class="talks">
+      <h2>Talks</h2>
+      <ul>
+        <li class="talk-topic">
+          <time class="talk-date">2017-12-14</time>
+          <a href="http://fe.jr.jd.com/techDay/3.pdf">Turbo - the next full-featured javascript web frameworks</a>
+          <address class="talk-location"><a href="https://maps.lsong.org/?q=39.8699037,116.4557876,12z">
+              JD.com Beijing
+            </a></address>
+        </li>
+        <li class="talk-topic">
+          <time class="talk-date">2017-03-10</time>
+          <a href="//lsong.org/slides/smallest-javascript-web-framework-in-the-world">Smallest javascript web
+            framework
+            in
+            the world</a>
+          <address class="talk-location"><a href="https://maps.lsong.org/?q=39.9966019,116.4788034,17z">
+              Meituan Beijing
+            </a></address>
+        </li>
+
+        <li class="talk-topic">
+          <time class="talk-date">2017-01-17</time>
+          <a href="//lsong.org/slides/i-bought-a-light-bulb.pdf">I bought a light bulb</a>
+          <address class="talk-location">
+            <a href="https://maps.lsong.org/?q=39.9966019,116.4788034,17z">
+              Meituan Beijing
+            </a>
+          </address>
+        </li>
+        <li class="talk-topic">
+          <time class="talk-date">2015-12-17</time>
+          <a href="http://mit.sankuai.com/activity/#/936">Isomorphic JavaScript and The Future of Web
+            Applications</a>
+          <address class="talk-location"><a href="https://maps.lsong.org/?q=39.9966019,116.4788034,17z">
+              WangJing SOHO in Beijing
+            </a>
+          </address>
+        </li>
+        <li class="talk-topic">
+          <time class="talk-date">2015-10-22</time>
+          <a href="//lsong.org/slides/canary-project-introduction">Instructions to canary project</a>
+          <address class="talk-location"><a href="https://maps.lsong.org/?q=39.9966019,116.4788034,17z">
+              WangJing SOHO in Beijing
+            </a></address>
+        </li>
+        <li class="talk-topic"><time class="talk-date">2015-05-10</time>
+          <a href="//lsong.org/slides/meituan-bootcamp-clean-code">Clean Code | Best practices for writing readable
+            code</a>
+          <address class="talk-location"><a href="https://maps.lsong.org/?q=39.9966019,116.4788034,17z">
+              Meituan Beijing
+            </a></address>
+        </li>
+
       </ul>
     </section>
-
-    <section class="home-section split-section" id="open-source" aria-labelledby="open-source-title">
-      <header class="section-header section-header-compact">
-        <div>
-          <p class="section-index">03 / Open source</p>
-          <h2 id="open-source-title">Things built in the open.</h2>
-        </div>
-        <a class="text-link section-link" href="https://github.com/lsongdev?tab=repositories">GitHub <span aria-hidden="true">↗</span></a>
-      </header>
-      <ul class="list project-list grid grid-cols-2 sm-grid-cols-1" data-limit="6" aria-busy="true">
-        <li class="list-item"><a href="https://github.com/lsongdev/node-escpos"><span>node-escpos</span><small>ESC/POS printer driver for Node.js</small></a></li>
-        <li class="list-item"><a href="https://github.com/lsongdev/kelp"><span>kelp</span><small>A small Node.js web framework</small></a></li>
-        <li class="list-item"><a href="https://github.com/lsongdev/node-ntp"><span>node-ntp</span><small>Network time protocol for Node.js</small></a></li>
-      </ul>
-    </section>
-
-    <section class="home-section archive-section" aria-labelledby="archive-title">
-      <header class="section-header section-header-compact">
-        <div>
-          <p class="section-index">04 / Elsewhere</p>
-          <h2 id="archive-title">A small corner of the internet.</h2>
-        </div>
-      </header>
-      <div class="elsewhere-grid grid grid-cols-4 sm-grid-cols-1">
-        <a class="card" href="https://lsong.org/books"><span>Books</span><small>Things I’ve been reading</small><b aria-hidden="true">↗</b></a>
-        <a class="card" href="https://lsong.org/music"><span>Music</span><small>Albums, radio, and sounds</small><b aria-hidden="true">↗</b></a>
-        <a class="card" href="https://lsong.org/start"><span>Apps</span><small>Experiments and tiny tools</small><b aria-hidden="true">↗</b></a>
-        <a class="card" href="https://lsong.org/games"><span>Games</span><small>Play something for a while</small><b aria-hidden="true">↗</b></a>
-      </div>
-    </section>
-
-    <section class="newsletter" id="subscribe" aria-labelledby="subscribe-title">
-      <div>
-        <p class="section-index">Occasional newsletter</p>
-        <h2 id="subscribe-title">New products, notes,<br>and other signals.</h2>
-      </div>
-      <form action="https://formspree.io/song940@gmail.com" method="post" class="newsletter-form input-group">
-        <label class="sr-only" for="email">Email address</label>
-        <input class="input" type="email" id="email" name="email" required placeholder="you@example.com">
-        <button class="button button-primary" type="submit">Subscribe</button>
+    <hr />
+    <section class="subscribe newsletter" id="subscribe" aria-labelledby="subscribe-title">
+      <h2>Subscribe</h2>
+      <p>Join our occasional newsletter for product launches, availability, job openings, and news:</p>
+      <form action="https://formspree.io/song940@gmail.com" method="post" class="form form-row">
+        <input class="input input-block" type="email" id="email" name="email" required placeholder="email address">
+        <button class="button" type="submit">Submit</button>
       </form>
     </section>
   </main>
 
-  <noscript>
-    <p class="noscript-notice">This page works best with JavaScript enabled. The links above remain available without it.</p>
-  </noscript>
-
   <footer class="site-footer footer">
     <a class="navbar-brand" href="/">
-      <span class="brand-mark" aria-hidden="true"><img src="/assets/web/icon-512.png" alt=""></span>
+      <img class="navbar-brand-mark" src="/assets/web/icon-512.png" alt="" aria-hidden="true">
       <span>Lsong</span>
     </a>
     <p>Independent software, made with care.</p>
@@ -162,8 +211,22 @@
       <a href="/terms.html">Terms</a>
       <a href="/privacy.html">Privacy</a>
     </nav>
-    <small>© <span id="copyright-year">2026</span> Lsong</small>
   </footer>
 </body>
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-42621148-4', 'auto');
+  ga('send', 'pageview');
+</script>
 
 </html>
