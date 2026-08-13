@@ -33,6 +33,11 @@
   .home-page .elsewhere-grid a:hover {
     background: #27272a;
   }
+
+  .home-page .newsletter {
+    color: #fff;
+    background: #27272a;
+  }
 }
 
 * {
@@ -438,6 +443,13 @@ body > .site-footer {
   --input-placeholder: #96969e;
   min-height: 44px;
   margin: 0;
+}
+
+/* The accessible label is intentionally the first child, so restore the
+   leading corner that the shared input-group selector cannot infer. */
+.newsletter-form > .sr-only + .input {
+  border-start-start-radius: var(--input-border-radius);
+  border-end-start-radius: var(--input-border-radius);
 }
 
 .site-footer {
