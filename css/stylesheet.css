@@ -48,7 +48,7 @@ body > footer {
 body > footer {
   gap: 16px;
   text-align: center;
-  color: var(--muted);
+  color: var(--color-text-muted);
   display: flex;
   justify-content: space-between;
   padding: 34px 0 50px;
@@ -69,6 +69,42 @@ body > footer {
   justify-content: space-between;
 }
 
+/* Lsong site language ---------------------------------------------------- */
+
+.eyebrow {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero {
+  min-height: clamp(360px, 58vh, 680px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-block: clamp(72px, 11vw, 128px);
+}
+
+.hero h1,
+.hero h2 {
+  max-width: min(100%, 900px);
+  margin: 0;
+  font-size: clamp(48px, 8vw, 88px);
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
 @media screen and (min-width: 768px) {
   .navbar h1::before {
     content: attr(prefix);
@@ -85,4 +121,3 @@ body > footer {
     scroll-behavior: auto;
   }
 }
-
