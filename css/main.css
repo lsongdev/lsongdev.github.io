@@ -1,4 +1,4 @@
-@import url(./stylesheet.css);
+@import url(./stylesheet.css?v=2);
 
 .home-page {
   --color-text: #111113;
@@ -24,10 +24,6 @@
     --color-primary: #8b6cff;
     --color-primary-hover: #a78bfa;
     --color-success: #4ade80;
-  }
-
-  .home-page .hero-summary p {
-    color: #d4d4d8;
   }
 
   .home-page .elsewhere-grid a:hover {
@@ -85,11 +81,6 @@ body > .site-footer {
   transform: translateY(0);
 }
 
-.site-header {
-  min-height: 74px;
-  border-bottom: 1px solid var(--color-border);
-}
-
 @media (min-width: 768px) {
   .home-page .navbar-brand .title::before {
     content: attr(prefix);
@@ -119,15 +110,6 @@ body > .site-footer {
   object-fit: contain;
 }
 
-.hero {
-  display: grid;
-  min-height: min(690px, calc(100vh - 74px));
-  padding: clamp(86px, 13vw, 150px) 0 clamp(70px, 10vw, 110px);
-  align-content: space-between;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.eyebrow,
 .section-index {
   margin: 0;
   color: var(--color-text-muted);
@@ -138,39 +120,8 @@ body > .site-footer {
   text-transform: uppercase;
 }
 
-.hero h1 {
-  max-width: 920px;
-  margin: 28px 0 56px;
-  font-family: var(--font-family-heading);
-  font-size: clamp(60px, 10vw, 116px);
-  font-weight: 710;
-  line-height: 0.88;
-  letter-spacing: -0.075em;
-}
-
-.hero h1 span {
+.home-page .site-hero-title span {
   color: var(--color-primary);
-}
-
-.hero-summary {
-  width: min(100%, 620px);
-  margin-left: 0;
-}
-
-.hero-summary p {
-  max-width: 580px;
-  margin: 0;
-  color: #36363b;
-  font-size: clamp(18px, 2.2vw, 23px);
-  line-height: 1.45;
-  letter-spacing: -0.025em;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  margin-top: 28px;
 }
 
 .text-link {
@@ -492,19 +443,6 @@ body > .site-footer {
 }
 
 @media (max-width: 760px) {
-  .hero {
-    min-height: auto;
-  }
-
-  .hero h1 {
-    margin-bottom: 48px;
-  }
-
-  .hero-summary {
-    width: 100%;
-    margin-left: 0;
-  }
-
   .product-grid,
   .project-list,
   .newsletter {
@@ -547,14 +485,6 @@ body > .site-footer {
 
   .site-header {
     min-height: 66px;
-  }
-
-  .hero {
-    padding-top: 74px;
-  }
-
-  .hero h1 {
-    font-size: clamp(54px, 18vw, 76px);
   }
 
   .section-header {
