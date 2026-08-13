@@ -1,24 +1,27 @@
 {
   "name": "Lsong’s Home",
   "short_name": "Lsong’s Home",
-  "description": "homepage, blog, music and etc.",
-  "id": "?type=home",
-  "start_url": ".",
+  "description": "Homepage, blog, music, books, and projects by Lsong.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
   "display": "standalone",
-  "theme_color": "#000",
-  "background_color": "#efefef",
+  "theme_color": "#fafafa",
+  "background_color": "#fafafa",
   "icons": [
     {
-      "src": "icon-x128.png",
-      "sizes": "128x128",
+      "src": "assets/web/icon-192-maskable.png",
+      "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
-      "src": "icon-x512.png",
+      "src": "assets/web/icon-512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ],
   "categories": [
