@@ -1,11 +1,23 @@
-import { ready } from 'https://lsong.org/scripts/dom/index.js';
-import { registerServiceWorker } from 'https://lsong.org/scripts/sw.js';
 import { render as renderPosts } from './posts.js';
 import { render as renderProjects } from './projects.js';
+import { render as renderProducts } from './products.js?v=2';
+
+const ready = callback => {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', callback, { once: true });
+  } else {
+    callback();
+  }
+};
 
 ready(() => {
-  renderPosts('#posts ul');
-  renderProjects('#projects ul');
+  renderProducts('.product-grid');
+  renderPosts('#writing ul');
+  renderProjects('#open-source ul');
+  const year = document.querySelector('#copyright-year');
+  if (year) year.textContent = new Date().getFullYear();
 });
 
-registerServiceWorker("sw.js");
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
