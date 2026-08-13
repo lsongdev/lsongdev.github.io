@@ -85,6 +85,20 @@ body > .site-footer {
   border-bottom: 1px solid var(--color-border);
 }
 
+@media (min-width: 768px) {
+  .home-page .navbar-brand .title::before {
+    content: attr(prefix);
+    font-weight: 400;
+  }
+}
+
+.noscript-notice {
+  width: min(calc(100% - var(--page-gutter) * 2), var(--page-max-width));
+  margin: 24px auto;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
 .brand-mark {
   display: inline-grid;
   width: 23px;

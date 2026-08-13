@@ -11,9 +11,14 @@ const ready = callback => {
 };
 
 ready(() => {
-  renderProducts('.product-grid');
-  renderPosts('#writing ul');
-  renderProjects('#open-source ul');
+  const markReady = selector => {
+    const element = document.querySelector(selector);
+    if (element) element.setAttribute('aria-busy', 'false');
+  };
+
+  renderProducts('.product-grid').finally(() => markReady('.product-grid'));
+  renderPosts('#writing ul').finally(() => markReady('#writing ul'));
+  renderProjects('#open-source ul').finally(() => markReady('#open-source ul'));
   const year = document.querySelector('#copyright-year');
   if (year) year.textContent = new Date().getFullYear();
 });

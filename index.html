@@ -28,7 +28,7 @@
   <header class="site-header navbar">
     <a class="navbar-brand" href="/" aria-label="Lsong home">
       <span class="brand-mark" aria-hidden="true"><img src="/assets/web/icon-512.png" alt=""></span>
-      <h1 prefix="Lsong’s " class="title">Home</h1>
+      <span prefix="Lsong’s " class="title">Home</span>
     </a>
     <nav class="site-nav" aria-label="Main navigation">
       <a class="active" href="#products">Products</a>
@@ -63,7 +63,7 @@
         <a class="text-link section-link" href="https://lsong.org/start">View all apps <span aria-hidden="true">↗</span></a>
       </header>
 
-      <div class="product-grid grid grid-cols-2 sm-grid-cols-1" data-products-source="https://go.lsong.org/data.yaml" data-products-folder="Lsong’s Products">
+      <div class="product-grid grid grid-cols-2 sm-grid-cols-1" data-products-source="https://go.lsong.org/data.yaml" data-products-folder="Lsong’s Products" aria-label="Featured products" aria-busy="true">
         <a class="card product-card" href="https://my.lsong.org">
           <span class="product-topline"><span>Identity</span><span>01</span></span>
           <span class="product-name">MyCenter</span>
@@ -99,7 +99,7 @@
         </div>
         <a class="text-link section-link" href="https://blog.lsong.org">All writing <span aria-hidden="true">↗</span></a>
       </header>
-      <ul class="list entry-list" data-limit="5">
+      <ul class="list entry-list" data-limit="5" aria-busy="true">
         <li class="list-item"><time datetime="2026-01-21">2026-01-21</time><a href="/posts">Jia Guolong's Fork in the Road</a></li>
         <li class="list-item"><time datetime="2025-05-27">2025-05-27</time><a href="/posts">I lose my hearing in my left ear</a></li>
         <li class="list-item"><time datetime="2024-11-20">2024-11-20</time><a href="/posts">Be My Eyes</a></li>
@@ -114,7 +114,7 @@
         </div>
         <a class="text-link section-link" href="https://github.com/lsongdev?tab=repositories">GitHub <span aria-hidden="true">↗</span></a>
       </header>
-      <ul class="list project-list grid grid-cols-2 sm-grid-cols-1" data-limit="6">
+      <ul class="list project-list grid grid-cols-2 sm-grid-cols-1" data-limit="6" aria-busy="true">
         <li class="list-item"><a href="https://github.com/lsongdev/node-escpos"><span>node-escpos</span><small>ESC/POS printer driver for Node.js</small></a></li>
         <li class="list-item"><a href="https://github.com/lsongdev/kelp"><span>kelp</span><small>A small Node.js web framework</small></a></li>
         <li class="list-item"><a href="https://github.com/lsongdev/node-ntp"><span>node-ntp</span><small>Network time protocol for Node.js</small></a></li>
@@ -148,6 +148,10 @@
       </form>
     </section>
   </main>
+
+  <noscript>
+    <p class="noscript-notice">This page works best with JavaScript enabled. The links above remain available without it.</p>
+  </noscript>
 
   <footer class="site-footer footer">
     <a class="navbar-brand" href="/">
