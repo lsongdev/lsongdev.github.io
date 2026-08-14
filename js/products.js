@@ -1,35 +1,21 @@
 import * as yaml from 'https://lsong.org/scripts/yaml.js';
 
-const createProductCard = (product, index) => {
+const createProductItem = product => {
+  const item = document.createElement('li');
   const link = document.createElement('a');
-  link.className = `card product-card${product.theme ? ` product-card-${product.theme}` : ''}`;
   link.href = product.url;
-
-  const topline = document.createElement('span');
-  topline.className = 'product-topline';
-
-  const category = document.createElement('span');
-  category.textContent = product.category;
-
-  const number = document.createElement('span');
-  number.textContent = String(index + 1).padStart(2, '0');
-  topline.append(category, number);
 
   const name = document.createElement('span');
   name.className = 'product-name';
   name.textContent = product.name;
 
-  const description = document.createElement('span');
+  const description = document.createElement('em');
   description.className = 'product-description';
   description.textContent = product.description;
 
-  const arrow = document.createElement('span');
-  arrow.className = 'product-arrow';
-  arrow.setAttribute('aria-hidden', 'true');
-  arrow.textContent = '↗';
-
-  link.append(topline, name, description, arrow);
-  return link;
+  link.append(name, description);
+  item.append(link);
+  return item;
 };
 
 export const products = async source => {
@@ -42,8 +28,11 @@ export const render = async element => {
   if (typeof element === 'string') element = document.querySelector(element);
   if (!element) return;
 
-  const source = element.dataset.productsSource;
-  const folderName = element.dataset.productsFolder;
+  const sourceElement = element.closest('[data-products-source]');
+  const source = sourceElement?.dataset.productsSource;
+  const folderName = sourceElement?.dataset.productsFolder;
+  if (!source || !folderName) return;
+
   const folders = await products(source).catch(() => []);
   const folder = Array.isArray(folders)
     ? folders.find(item => item.name === folderName)
@@ -55,8 +44,8 @@ export const render = async element => {
   if (!items.length) return;
 
   const fragment = document.createDocumentFragment();
-  items.filter(item => item.featured !== false).forEach((item, index) => {
-    fragment.append(createProductCard(item, index));
+  items.filter(item => item.featured !== false).forEach(item => {
+    fragment.append(createProductItem(item));
   });
   element.replaceChildren(fragment);
 };

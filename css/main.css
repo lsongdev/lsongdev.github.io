@@ -6,33 +6,14 @@
   --section-rule: 1px solid var(--color-border);
 }
 
-body {
-  color: var(--color-text);
-  background: var(--color-canvas);
-  -webkit-font-smoothing: antialiased;
-}
-
-a {
-  color: inherit;
-}
-
-.site-hero-title span {
-  color: var(--color-primary);
-}
-
-#hello.site-hero {
-  min-height: min(580px, calc(100svh - 74px));
-  padding-block: clamp(48px, 6vw, 64px);
-}
-
 /* Section rhythm ------------------------------------------------------- */
 
-.layout-content > section:not(.site-hero) {
+.layout-content>section:not(.site-hero) {
   padding-block: var(--section-space);
   border-bottom: var(--section-rule);
 }
 
-.layout-content > section:not(.site-hero) > h2 {
+.layout-content>section:not(.site-hero)>h2 {
   max-width: 760px;
   margin: 0 0 clamp(32px, 5vw, 52px);
   font-size: var(--section-heading-size);
@@ -41,7 +22,7 @@ a {
   letter-spacing: -0.05em;
 }
 
-.layout-content > section:not(.site-hero) > h2::before {
+.layout-content>section:not(.site-hero)>h2::before {
   display: block;
   margin-bottom: 12px;
   color: var(--color-text-muted);
@@ -53,18 +34,29 @@ a {
   text-transform: uppercase;
 }
 
-#products > h2::before { content: "01 / Products"; }
-#projects > h2::before { content: "02 / Open source"; }
-#posts > h2::before { content: "03 / Writing"; }
-#talks > h2::before { content: "04 / Talks"; }
+#products>h2::before {
+  content: "01 / Products";
+}
 
-.layout-content > section > p:last-child {
+#projects>h2::before {
+  content: "02 / Open source";
+}
+
+#posts>h2::before {
+  content: "03 / Writing";
+}
+
+#talks>h2::before {
+  content: "04 / Talks";
+}
+
+.layout-content>section>p:last-child {
   margin: 28px 0 0;
   color: var(--color-text-muted);
   font-size: 14px;
 }
 
-.layout-content > section > p:last-child a {
+.layout-content>section>p:last-child a {
   color: var(--color-text);
   font-weight: 650;
   text-underline-offset: 3px;
@@ -78,20 +70,20 @@ a {
 
 /* Products ------------------------------------------------------------- */
 
-#products > .products {
+#products>.products {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   border-top: var(--section-rule);
   border-left: var(--section-rule);
 }
 
-#products > .products > li {
+#products>.products>li {
   min-width: 0;
   border-right: var(--section-rule);
   border-bottom: var(--section-rule);
 }
 
-#products > .products a {
+#products>.products a {
   display: flex;
   min-height: 240px;
   padding: clamp(24px, 4vw, 38px);
@@ -101,8 +93,8 @@ a {
   transition: color 180ms ease, background-color 180ms ease;
 }
 
-#products > .products a:hover,
-#products > .products a:focus-visible {
+#products>.products a:hover,
+#products>.products a:focus-visible {
   color: var(--color-on-primary);
   background: var(--color-primary);
 }
@@ -123,14 +115,14 @@ a {
   transition: color 180ms ease;
 }
 
-#products > .products a:hover .product-description,
-#products > .products a:focus-visible .product-description {
+#products>.products a:hover .product-description,
+#products>.products a:focus-visible .product-description {
   color: color-mix(in srgb, var(--color-on-primary) 76%, transparent);
 }
 
 /* Projects ------------------------------------------------------------- */
 
-#projects > ul {
+#projects>ul {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: var(--section-rule);
@@ -172,7 +164,7 @@ a {
 
 /* Posts ---------------------------------------------------------------- */
 
-#posts > ul {
+#posts>ul {
   border-top: var(--section-rule);
 }
 
@@ -203,7 +195,7 @@ a {
 
 /* Talks ---------------------------------------------------------------- */
 
-#talks > ul {
+#talks>ul {
   border-top: var(--section-rule);
 }
 
@@ -222,7 +214,7 @@ a {
   font-size: 12px;
 }
 
-.talk-topic > a {
+.talk-topic>a {
   font-size: clamp(16px, 2vw, 19px);
   font-weight: 580;
   line-height: 1.4;
@@ -230,8 +222,8 @@ a {
   text-decoration: none;
 }
 
-.talk-topic > a:hover,
-.talk-topic > a:focus-visible {
+.talk-topic>a:hover,
+.talk-topic>a:focus-visible {
   color: var(--color-primary);
 }
 
@@ -247,11 +239,11 @@ a {
 
 /* Newsletter ----------------------------------------------------------- */
 
-.layout-content > hr {
+.layout-content>hr {
   display: none;
 }
 
-.layout-content > .newsletter {
+.layout-content>.newsletter {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
   gap: clamp(32px, 7vw, 72px);
@@ -262,12 +254,12 @@ a {
   background: #18181b;
 }
 
-.newsletter > h2 {
+.newsletter>h2 {
   margin: 0;
   color: #fff;
 }
 
-.newsletter > p {
+.newsletter>p {
   grid-column: 1;
   max-width: 48ch;
   margin: 18px 0 0;
@@ -275,7 +267,7 @@ a {
   line-height: 1.6;
 }
 
-.newsletter > .form {
+.newsletter>.form {
   grid-column: 2;
   grid-row: 1 / span 2;
   width: 100%;
@@ -298,44 +290,16 @@ a {
   margin: 0;
 }
 
-/* Footer --------------------------------------------------------------- */
-
-.site-footer {
-  align-items: center;
-  color: var(--color-text-muted);
-  text-align: left;
-}
-
-.site-footer p {
-  margin: 0;
-  font-size: 13px;
-}
-
-.site-footer nav {
-  display: flex;
-  gap: 18px;
-}
-
-.site-footer nav a {
-  color: var(--color-text-muted);
-  font-size: 13px;
-  text-decoration: none;
-}
-
-.site-footer nav a:hover,
-.site-footer nav a:focus-visible {
-  color: var(--color-text);
-}
-
 /* Responsive ----------------------------------------------------------- */
 
 @media (max-width: 760px) {
-  #products > .products,
-  #projects > ul {
+
+  #products>.products,
+  #projects>ul {
     grid-template-columns: 1fr;
   }
 
-  #products > .products a {
+  #products>.products a {
     min-height: 210px;
   }
 
@@ -352,11 +316,11 @@ a {
     text-align: left;
   }
 
-  .layout-content > .newsletter {
+  .layout-content>.newsletter {
     grid-template-columns: 1fr;
   }
 
-  .newsletter > .form {
+  .newsletter>.form {
     grid-column: 1;
     grid-row: auto;
   }
@@ -367,7 +331,7 @@ a {
     --section-space: 64px;
   }
 
-  .layout-content > section:not(.site-hero) > h2 {
+  .layout-content>section:not(.site-hero)>h2 {
     margin-bottom: 30px;
   }
 
@@ -388,28 +352,20 @@ a {
     display: block;
   }
 
-  .talk-topic > a,
+  .talk-topic>a,
   .talk-location {
     display: block;
     margin-top: 8px;
   }
 
-  .layout-content > .newsletter {
+  .layout-content>.newsletter {
     margin-inline: calc(-1 * var(--page-gutter));
-  }
-
-  .site-footer {
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .site-footer p {
-    display: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #products > .products a,
+
+  #products>.products a,
   #projects li a {
     transition: none;
   }

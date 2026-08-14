@@ -1,5 +1,7 @@
 export const parseRSS = str => {
   const xmlDoc = new window.DOMParser().parseFromString(str, "text/xml");
+  if (xmlDoc.querySelector('parsererror')) return [];
+
   const items = Array.from(xmlDoc.querySelectorAll('item')).map(item => {
     const $t = t => (item.querySelector(t)?.textContent || '').trim();
     return {
@@ -11,14 +13,12 @@ export const parseRSS = str => {
     };
   });
   return items;
-}
+};
 
-export const posts = () => {
-  return Promise
-    .resolve()
-    .then(() => fetch(`https://blog.lsong.org/feed.xml`))
-    .then(res => res.text())
-    .then(parseRSS)
+export const posts = async () => {
+  const response = await fetch('https://blog.lsong.org/feed.xml');
+  if (!response.ok) throw new Error(`Posts request failed: ${response.status}`);
+  return parseRSS(await response.text());
 };
 
 const formatDate = value => {
@@ -28,27 +28,25 @@ const formatDate = value => {
 };
 
 export const render = async element => {
-  if (typeof element === 'string')
-    element = document.querySelector(element);
+  if (typeof element === 'string') element = document.querySelector(element);
   if (!element) return;
+
   const items = await posts().catch(() => []);
   if (!items.length) return;
+
   const fragment = document.createDocumentFragment();
-  const limit = Number(element.dataset.limit) || items.length;
+  const limit = Number(element.dataset.limit) || 5;
   for (const item of items.slice(0, limit)) {
     const li = document.createElement('li');
-    li.className = 'list-item';
-    
-    const nm = document.createElement('a');
-    nm.href = item.link;
-    nm.className = 'post-link';
-    const span = document.createElement('time');
-    span.className = 'post-date';
-    span.dateTime = formatDate(item.pubDate);
-    span.textContent = formatDate(item.pubDate);
-    li.append(span);
-    nm.textContent = item.title;
-    li.append(nm);
+    const link = document.createElement('a');
+    const time = document.createElement('time');
+    const date = formatDate(item.pubDate);
+
+    time.dateTime = date;
+    time.textContent = date;
+    link.href = item.link;
+    link.textContent = item.title;
+    li.append(time, link);
     fragment.append(li);
   }
   element.replaceChildren(fragment);
