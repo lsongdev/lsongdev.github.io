@@ -7,7 +7,7 @@ export const getProjects = async () => {
 export const sortByStar = (a, b) =>
   b.stargazers_count - a.stargazers_count;
 
-const DEFAULT_LIMIT = 5;
+const DEFAULT_LIMIT = 6;
 
 export const render = async element => {
   if (typeof element === 'string') element = document.querySelector(element);
