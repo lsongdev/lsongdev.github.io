@@ -1,7 +1,19 @@
 export const getProjects = async () => {
-  const response = await fetch('https://api.github.com/users/lsongdev/repos?per_page=100&type=owner');
-  if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
-  return response.json();
+  const projects = [];
+  const perPage = 100;
+
+  for (let page = 1; ; page += 1) {
+    const response = await fetch(
+      `https://api.github.com/users/lsongdev/repos?per_page=${perPage}&type=owner&sort=updated&page=${page}`,
+    );
+    if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
+
+    const pageProjects = await response.json();
+    projects.push(...pageProjects);
+    if (pageProjects.length < perPage) break;
+  }
+
+  return projects;
 };
 
 export const sortByStar = (a, b) =>
