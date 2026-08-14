@@ -1,1 +1,407 @@
 @import url(./stylesheet.css?v=5);
+
+:root {
+  --section-space: clamp(72px, 10vw, 112px);
+  --section-heading-size: clamp(34px, 5vw, 54px);
+  --section-rule: 1px solid var(--color-border);
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-canvas);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+.site-hero-title span {
+  color: var(--color-primary);
+}
+
+/* Section rhythm ------------------------------------------------------- */
+
+.layout-content > section:not(.site-hero) {
+  padding-block: var(--section-space);
+  border-bottom: var(--section-rule);
+}
+
+.layout-content > section > h2 {
+  max-width: 760px;
+  margin: 0 0 clamp(32px, 5vw, 52px);
+  font-size: var(--section-heading-size);
+  font-weight: 680;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.layout-content > section > h2::before {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--color-text-muted);
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+#products > h2::before { content: "01 / Products"; }
+#projects > h2::before { content: "02 / Open source"; }
+#posts > h2::before { content: "03 / Writing"; }
+#talks > h2::before { content: "04 / Talks"; }
+
+.layout-content > section > p:last-child {
+  margin: 28px 0 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.layout-content > section > p:last-child a {
+  color: var(--color-text);
+  font-weight: 650;
+  text-underline-offset: 3px;
+}
+
+.layout-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Products ------------------------------------------------------------- */
+
+#products > .products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: var(--section-rule);
+  border-left: var(--section-rule);
+}
+
+#products > .products > li {
+  min-width: 0;
+  border-right: var(--section-rule);
+  border-bottom: var(--section-rule);
+}
+
+#products > .products a {
+  display: flex;
+  min-height: 240px;
+  padding: clamp(24px, 4vw, 38px);
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+#products > .products a:hover,
+#products > .products a:focus-visible {
+  color: var(--color-on-primary);
+  background: var(--color-primary);
+}
+
+.product-name {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 680;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.product-description {
+  max-width: 34ch;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.5;
+  transition: color 180ms ease;
+}
+
+#products > .products a:hover .product-description,
+#products > .products a:focus-visible .product-description {
+  color: color-mix(in srgb, var(--color-on-primary) 76%, transparent);
+}
+
+/* Projects ------------------------------------------------------------- */
+
+#projects > ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: var(--section-rule);
+  border-left: var(--section-rule);
+}
+
+#projects li {
+  min-width: 0;
+  border-right: var(--section-rule);
+  border-bottom: var(--section-rule);
+}
+
+#projects li a {
+  display: flex;
+  min-height: 160px;
+  padding: 24px;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 21px;
+  font-weight: 660;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  transition: background-color 180ms ease;
+}
+
+#projects li a::after {
+  content: attr(title);
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+#projects li a:hover,
+#projects li a:focus-visible {
+  background: var(--color-surface-subtle);
+}
+
+/* Posts ---------------------------------------------------------------- */
+
+#posts > ul {
+  border-top: var(--section-rule);
+}
+
+#posts li {
+  display: flex;
+  gap: clamp(18px, 4vw, 48px);
+  align-items: baseline;
+  padding: 20px 0;
+  border-bottom: var(--section-rule);
+  color: var(--color-text-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+}
+
+#posts li a {
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: clamp(17px, 2.2vw, 21px);
+  font-weight: 580;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+#posts li a:hover,
+#posts li a:focus-visible {
+  color: var(--color-primary);
+}
+
+/* Talks ---------------------------------------------------------------- */
+
+#talks > ul {
+  border-top: var(--section-rule);
+}
+
+.talk-topic {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr) minmax(130px, auto);
+  gap: 24px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: var(--section-rule);
+}
+
+.talk-date,
+.talk-location {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.talk-topic > a {
+  font-size: clamp(16px, 2vw, 19px);
+  font-weight: 580;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.talk-topic > a:hover,
+.talk-topic > a:focus-visible {
+  color: var(--color-primary);
+}
+
+.talk-location {
+  margin: 0;
+  font-style: normal;
+  text-align: right;
+}
+
+.talk-location a {
+  text-decoration: none;
+}
+
+/* Newsletter ----------------------------------------------------------- */
+
+.layout-content > hr {
+  display: none;
+}
+
+.layout-content > .newsletter {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+  gap: clamp(32px, 7vw, 72px);
+  align-items: end;
+  padding: clamp(56px, 8vw, 88px) clamp(24px, 5vw, 52px);
+  border: 0;
+  color: #fff;
+  background: #18181b;
+}
+
+.newsletter > h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.newsletter > p {
+  grid-column: 1;
+  max-width: 48ch;
+  margin: 18px 0 0;
+  color: #a1a1aa;
+  line-height: 1.6;
+}
+
+.newsletter > .form {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: 100%;
+  margin: 0;
+}
+
+.newsletter .input {
+  --input-text: #fff;
+  --input-bg: #27272a;
+  --input-border-color: #52525b;
+  --input-placeholder: #a1a1aa;
+  margin: 0;
+}
+
+.newsletter .button {
+  --button-bg: #fff;
+  --button-text: #18181b;
+  --button-border-color: #fff;
+  --button-hover-bg: #e4e4e7;
+  margin: 0;
+}
+
+/* Footer --------------------------------------------------------------- */
+
+.site-footer {
+  align-items: center;
+  color: var(--color-text-muted);
+  text-align: left;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.site-footer nav {
+  display: flex;
+  gap: 18px;
+}
+
+.site-footer nav a {
+  color: var(--color-text-muted);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.site-footer nav a:hover,
+.site-footer nav a:focus-visible {
+  color: var(--color-text);
+}
+
+/* Responsive ----------------------------------------------------------- */
+
+@media (max-width: 760px) {
+  #products > .products,
+  #projects > ul {
+    grid-template-columns: 1fr;
+  }
+
+  #products > .products a {
+    min-height: 210px;
+  }
+
+  #projects li a {
+    min-height: 140px;
+  }
+
+  .talk-topic {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .talk-location {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .layout-content > .newsletter {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter > .form {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --section-space: 64px;
+  }
+
+  .layout-content > section > h2 {
+    margin-bottom: 30px;
+  }
+
+  #posts li {
+    display: block;
+  }
+
+  #posts li a {
+    display: block;
+    margin-top: 7px;
+  }
+
+  .talk-topic {
+    display: block;
+  }
+
+  .talk-topic > a,
+  .talk-location {
+    display: block;
+    margin-top: 8px;
+  }
+
+  .layout-content > .newsletter {
+    margin-inline: calc(-1 * var(--page-gutter));
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .site-footer p {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #products > .products a,
+  #projects li a {
+    transition: none;
+  }
+}
