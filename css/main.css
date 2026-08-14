@@ -8,6 +8,12 @@
 
 /* Section rhythm ------------------------------------------------------- */
 
+.layout-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .layout-content>section:not(.site-hero) {
   padding-block: var(--section-space);
   border-bottom: var(--section-rule);
@@ -34,6 +40,14 @@
   text-transform: uppercase;
 }
 
+.layout-content>section>p:last-child a {
+  color: var(--color-text);
+  font-weight: 650;
+  text-underline-offset: 3px;
+}
+
+/* products */
+
 #products>h2::before {
   content: "01 / Products";
 }
@@ -48,24 +62,6 @@
 
 #talks>h2::before {
   content: "04 / Talks";
-}
-
-.layout-content>section>p:last-child {
-  margin: 28px 0 0;
-  color: var(--color-text-muted);
-  font-size: 14px;
-}
-
-.layout-content>section>p:last-child a {
-  color: var(--color-text);
-  font-weight: 650;
-  text-underline-offset: 3px;
-}
-
-.layout-content ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 /* Products ------------------------------------------------------------- */

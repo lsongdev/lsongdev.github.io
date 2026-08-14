@@ -1,4 +1,4 @@
-import * as yaml from 'https://lsong.org/scripts/yaml.js';
+import * as yaml from 'https://lsong.org/scripts/text/yaml.js';
 
 const createProductItem = product => {
   const item = document.createElement('li');
@@ -44,7 +44,7 @@ export const render = async element => {
   if (!items.length) return;
 
   const fragment = document.createDocumentFragment();
-  items.filter(item => item.featured !== false).forEach(item => {
+  items.slice(0, 6).filter(item => item.featured !== false).forEach(item => {
     fragment.append(createProductItem(item));
   });
   element.replaceChildren(fragment);

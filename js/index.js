@@ -1,5 +1,4 @@
 import { ready } from 'https://lsong.org/scripts/dom/index.js';
-import { registerServiceWorker } from 'https://lsong.org/scripts/sw.js';
 import { render as renderPosts } from './posts.js?v=2';
 import { render as renderProjects } from './projects.js?v=3';
 import { render as renderProducts } from './products.js?v=3';
@@ -15,5 +14,3 @@ ready(() => {
     productsSection?.setAttribute('aria-busy', 'false');
   });
 });
-
-registerServiceWorker('/sw.js');
