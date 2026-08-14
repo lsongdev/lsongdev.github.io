@@ -20,6 +20,11 @@ a {
   color: var(--color-primary);
 }
 
+#hello.site-hero {
+  min-height: min(580px, calc(100svh - 74px));
+  padding-block: clamp(48px, 6vw, 64px);
+}
+
 /* Section rhythm ------------------------------------------------------- */
 
 .layout-content > section:not(.site-hero) {
@@ -27,7 +32,7 @@ a {
   border-bottom: var(--section-rule);
 }
 
-.layout-content > section > h2 {
+.layout-content > section:not(.site-hero) > h2 {
   max-width: 760px;
   margin: 0 0 clamp(32px, 5vw, 52px);
   font-size: var(--section-heading-size);
@@ -36,7 +41,7 @@ a {
   letter-spacing: -0.05em;
 }
 
-.layout-content > section > h2::before {
+.layout-content > section:not(.site-hero) > h2::before {
   display: block;
   margin-bottom: 12px;
   color: var(--color-text-muted);
@@ -362,8 +367,12 @@ a {
     --section-space: 64px;
   }
 
-  .layout-content > section > h2 {
+  .layout-content > section:not(.site-hero) > h2 {
     margin-bottom: 30px;
+  }
+
+  #hello.site-hero {
+    min-height: min(560px, calc(100svh - 66px));
   }
 
   #posts li {
