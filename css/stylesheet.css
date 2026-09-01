@@ -76,6 +76,11 @@ body>footer,
   align-items: center;
 }
 
+.site-footer nav {
+  display: flex;
+  gap: 10px;
+}
+
 .navbar hr {
   display: none;
 }
