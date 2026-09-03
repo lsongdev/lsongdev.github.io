@@ -331,10 +331,6 @@
     margin-bottom: 30px;
   }
 
-  #hello.site-hero {
-    min-height: min(560px, calc(100svh - 66px));
-  }
-
   #posts li {
     display: block;
   }

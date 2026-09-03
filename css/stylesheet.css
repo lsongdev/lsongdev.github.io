@@ -111,8 +111,8 @@ body>footer,
   align-content: center;
   justify-items: start;
   border-bottom: 1px solid var(--color-border);
-  min-height: min(500px, calc(100svh - 74px));
-  /*padding-block: clamp(48px, 6vw, 64px);*/
+  /* min-height: min(500px, calc(100svh - 74px)); */
+  /* padding-block: clamp(48px, 6vw, 64px); */
   padding: clamp(72px, 12vw, 132px) 0 clamp(56px, 9vw, 96px);
 }
 
